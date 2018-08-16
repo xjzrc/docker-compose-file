@@ -8,8 +8,13 @@
 ### docker容器设置
 1. 设置开机启动：systemctl enable docker
 
-### docker常用用命令
-https://github.com/xjzrc/Linux-Tutorial/blob/master/markdown-file/Docker-Install-And-Usage.md
+### [CentOS 7 安装](https://github.com/judasn/Linux-Tutorial/blob/master/markdown-file/CentOS-7-Install.md)
 
-### kafka
-1. docker-compose中KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://192.168.138.110:9093要使用宿主机IP地址
+### [Docker 安装和使用](https://github.com/judasn/Linux-Tutorial/blob/master/markdown-file/Docker-Install-And-Usage.md)
+
+### [Kafka 安装和配置](https://github.com/judasn/Linux-Tutorial/blob/master/markdown-file/Kafka-Install-And-Settings.md)
+
+### [Zookeeper 安装和配置](https://github.com/judasn/Linux-Tutorial/blob/master/markdown-file/Zookeeper-Install.md)
+
+### [Redis 安装和配置](https://github.com/judasn/Linux-Tutorial/blob/master/markdown-file/Redis-Install-And-Settings.md)
+
