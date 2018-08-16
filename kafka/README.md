@@ -8,6 +8,7 @@
 ```
 
 2. 启动zookeeper集群
+>https://github.com/xjzrc/docker-compose-file/tree/master/zookeeper
 
 3. 启动kafka集群：docker-compose up -d
 
