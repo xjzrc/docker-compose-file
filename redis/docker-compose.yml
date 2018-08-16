@@ -1,0 +1,65 @@
+version: '3'
+
+services:
+  master:
+    image: redis:4.0.10-alpine
+    networks: 
+      - sentinel_net
+
+  slave_1:
+    image: redis:4.0.10-alpine
+    networks: 
+      - sentinel_net
+    command: redis-server --slaveof master 6379
+    depends_on:
+      - master
+
+  slave_2:
+    image: redis:4.0.10-alpine
+    networks: 
+      - sentinel_net
+    command: redis-server --slaveof master 6379
+    depends_on:
+      - master
+
+  sentinel_1:
+    image: s7anley/redis-sentinel-docker:4.0.10
+    networks: 
+      - sentinel_net
+    ports:
+      - 26379:26379
+    environment:
+      - MASTER_NAME=mymaster
+      - QUORUM=2
+      - MASTER=master
+    depends_on:
+      - master
+
+  sentinel_2:
+    image: s7anley/redis-sentinel-docker:4.0.10
+    networks:
+      - sentinel_net
+    ports:
+      - 26380:26379
+    environment:
+      - MASTER_NAME=mymaster      
+      - QUORUM=2
+      - MASTER=master
+    depends_on:
+      - master
+
+  sentinel_3:
+    image: s7anley/redis-sentinel-docker:4.0.10
+    networks: 
+      - sentinel_net
+    ports:
+      - 26381:26379
+    environment:
+      - MASTER_NAME=mymaster      
+      - QUORUM=2
+      - MASTER=master
+    depends_on:
+      - master
+
+networks:
+  sentinel_net:
