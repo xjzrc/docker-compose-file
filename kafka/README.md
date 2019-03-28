@@ -48,3 +48,11 @@ This is another message
 This is a message
 This is another message
 ```
+
+9. 查看队列消费进度
+> View queue consumption progress
+```script
+> bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --describe --group consumer-group-id
+TOPIC     PARTITION   CURRENT-OFFSET   LOG-END-OFFSET     LAG   CONSUMER-ID     HOST      CLIENT-ID
+topic1        1          301441          339135          37694      -            -           -
+```
